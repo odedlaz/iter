@@ -1,2 +1,5 @@
 Flask
 docker
+gunicorn
+greenlet
+gevent
