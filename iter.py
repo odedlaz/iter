@@ -21,6 +21,10 @@ def get_sites():
             continue
 
         for port_config in c['Ports']:
+
+            if int(port_config['PrivatePort']) != 80:
+                continue
+
             url = url_fmt.format(port_config['PublicPort'])
             yield Site(name=chostname, url=url)
 
