@@ -6,7 +6,7 @@ from docker import APIClient as Docker
 Site = namedtuple('Site', ['name', 'url'])
 
 
-server_name = os.getenv('SERVER_NAME')
+server_name = os.getenv('SERVER_NAME', "localhost")
 assert server_name is not None
 url_fmt = "http://{}:{{}}".format(server_name)
 
